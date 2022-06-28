@@ -48,6 +48,18 @@
       //Set 요소 존재 여부 확인 : has
       console.log(set1.has("b"));
       console.log(set1.has("a"));
+
+      //Set 요소 제거 : delete
+      set1.delete("a");
+      //존재하지 않는 요소 제거 시 무시
+      set1.delete("b");
+      console.log(set1);
+      //add랑 달리 체이닝 기법을 지원하지 않음
+      //   set1.delete(1).delete(2);
+
+      //set 요소 일괄 삭제 : clear
+      set1.clear();
+      console.log(set1);
     </script>
   </body>
 </html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map</title>
+  </head>
+  <body>
+    <script>
+      const map1 = new Map();
+      console.log(map1);
+
+      const map2 = new Map([
+        ["key1", "value1"],
+        ["key2", "value2"],
+      ]);
+      console.log(map2);
+
+      //value 값만 지정 시 에러 발생
+      // const map3 = new Map([1, 2]);
+
+      //중복된 key로 값을 전달하면 key에 해당되는 값이 덮어써짐
+      const map4 = new Map([["key1", "value1"], ["key1, value2"]]);
+      console.log(map4);
+
+      //Map 요소 개수 확인 : size
+      console.log(map2.size);
+      const { size } = map4;
+      console.log(size);
+      console.log(map4.size);
+
+      //Map 요소 추가 : Set
+      map4.set("key2", "value3");
+      //set은 체이닝 기법 지원
+      map4.set("key3", "value4").set("key4", "value5");
+      console.log(map4);
+
+      //set도 마찬가지로 중복된 key값으로 value를 추가하면 해당 key값의 value가 덮어써짐
+      map4.set("key1", "value11");
+      console.log(map4);
+
+      //객체의 key값은 문자열과 심벌만 가능
+      const lee = { name: "lee" };
+      const kim = { name: "kim" };
+
+      //Map에 객체 추가 가능
+      const map5 = new Map();
+      map5.set(lee, "dev").set(kim, "oper");
+      console.log(map5);
+
+      //Map 요소를 하나씩 꺼내기 : get
+      //get을 사용할 때는 매개변수로 key값을 전달
+      console.log(map5.get(lee));
+      console.log(map4.get("key1"));
+      //존재하지 않는 키 값에 접근하면 undefined가 출력됨
+      console.log(map4.get("key"));
+
+      //Map 요소의 존재 여부 확인 : has
+      //has도 매개변수로 key값 전달
+      console.log(map5.has(lee));
+      console.log(map5.has("yumi"));
+
+      //Map 요소 삭제 : delete
+      //key값을 매개변수로 전달
+      map5.delete(kim);
+      console.log(map5);
+
+      //Map 요소를 모두 삭제 : clear
+      map4.clear();
+      console.log(map4);
+    </script>
+  </body>
+</html>
