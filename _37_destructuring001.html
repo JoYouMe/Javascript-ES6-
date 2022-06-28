@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>비구조화 할당</title>
+  </head>
+  <body>
+    <script>
+      //ES5
+      var arr1 = [1, 2, 3];
+
+      var one = arr1[0];
+      var two = arr1[1];
+      var three = arr1[2];
+
+      console.log(one);
+      console.log(two);
+      console.log(three);
+
+      //ES6 Destructuring
+      const arr2 = [4, 5, 6];
+      const [four, five, six] = arr2;
+
+      console.log(four);
+      console.log(five);
+      console.log(six);
+
+      //비구조화 할당을 할 때는 항상 오른쪽에 배열같은 집합을 지정해야 함
+      // const [seven, eight]; //에러 발생
+
+      //비구조화 할당의 기준은 인덱스(순차적으로 할당되어 변수의 개수를 요소의 개수와 맞춰줄 필요없음)
+      const [nine, ten] = [9, 10, 11];
+
+      console.log(nine);
+      console.log(ten);
+
+      const [eleven, , thirteen] = [11, 12, 13];
+      console.log(eleven, thirteen);
+
+      //Rest 파라미터와 함께 사용 가능
+      const [fourteen, ...rest] = [14, 15, 16];
+      console.log(fourteen, rest);
+    </script>
+  </body>
+</html>

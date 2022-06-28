@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>templateliteral 표현식 삽입</title>
+  </head>
+  <body>
+    <script>
+      //ES5
+      var first = "Yumi";
+      var last = "Jo";
+      var str1 = "제 이름은" + last + first + "입니다";
+      console.log(str1);
+
+      //ES6 templatelitaral
+      const first1 = "Yumi";
+      const last1 = "Jo";
+      const str2 = `제 이름은${last1}${first1}입니다`;
+      console.log(str2);
+
+      //ES5
+      console.log("1 + 2 = " + (1 + 2));
+
+      //ES6 templatelitaral
+      console.log(`1+2=${1 + 2}`);
+
+      //리액트에서의 태그드 탬플릿
+      // const div = styled.div({
+      //      `css:
+
+      // });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spread 문법</title>
+  </head>
+  <body>
+    <script>
+      console.log(...[1, 2, 3]);
+      console.log(..."Hello");
+
+      //객체는 스프레드 문법으로 사용 불가능
+      console.log(...{
+        a: 1,
+        b: 2,
+      });
+
+      //스프레드 문법의 결과값을 변수에 담을 수 없음
+      const list = ...[1, 2, 3];
+    </script>
+  </body>
+</html>

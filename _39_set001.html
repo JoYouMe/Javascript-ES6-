@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set</title>
+  </head>
+  <body>
+    <script>
+      //중복 값 제거
+      const set1 = new Set();
+      console.log(set1);
+
+      const set2 = new Set([1, 2, 2, 3, 3]);
+      console.log(set2);
+
+      const set3 = new Set("Hello");
+      console.log(set3);
+
+      //Set 등장 전 중복 제거
+      // v: 현재 검사할 요소
+      // i: 현재 인덱스
+      // self: array 자체 (this)
+      const uniq = (array) =>
+        array.filter((v, i, self) => self.indexOf(v) === i);
+      console.log(uniq([2, 1, 2, 3, 3, 4, 4, 3, 2, 1]));
+
+      //Set 중복 제거
+      const uniq1 = (array) => [...new Set(array)];
+      console.log(uniq1([2, 1, 2, 3, 3, 4, 4, 3, 2, 1]));
+
+      //Set의 요소 개수 확인 : size
+      const { size } = set3;
+      console.log(size);
+      console.log(set3.size);
+
+      //Set 요소 추가 : add
+      set1.add(1);
+      console.log(set1);
+
+      set1.add(2).add(3).add(4);
+      set1.add(1);
+
+      //모든 타입의 변수를 가질 수 있음 (배열, 객체도 가능)
+      set1.add("a").add(true).add(null).add(undefined);
+
+      //Set 요소 존재 여부 확인 : has
+      console.log(set1.has("b"));
+      console.log(set1.has("a"));
+    </script>
+  </body>
+</html>
